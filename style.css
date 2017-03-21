@@ -6,6 +6,11 @@ body {
   background-image: url(Images/dark1.png);
 }
 
+h1 {
+  font-family: 'Diplomata SC', cursive;
+  font-size: 50px;
+}
+
 #mainDiv {
   background-image: url(Images/white1.png);
   text-align: center;
@@ -16,8 +21,22 @@ body {
 }
 
 #mainInput {
-  font-size: 20px;
+  outline: none;
   color: #e76736;
+  background-color: rgba(0, 0, 0, 0);
+	text-align: center;
+	font-size: 20px;
+	text-transform: uppercase;
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+}
+
+#mainInput[type="text"] {
+  font-size: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+  border:none;
+  border-bottom: 2px solid black;
 }
 
 #mainPic {
@@ -29,23 +48,6 @@ body {
 }
 
 #mainInput {
-	text-align: center;
-	font-size: 20px;
-	text-transform: uppercase;
-  width: 200px;
-  height: 30px;
-}
-
-#mainInput[type="text"] {
-  background-color: rgba(0, 0, 0, 0);
-  font-size: 25px;
-  border: none;
-  border-bottom: 2px solid black;
-  outline: none;
-}
-
-#mainInput[type="text"]:focus 
-  box-shadow: 0 20px 20px gray;
 }
 
 #valuesDiv {
@@ -55,6 +57,8 @@ body {
 #valuesDiv > p {
   height: 20px;
   font-size: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+
 }
 
 #hrLine {
@@ -68,7 +72,7 @@ body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 350px;
+  top: 380px;
   position: absolute;
   width: 205px;
   height: 25px;
@@ -76,7 +80,7 @@ body {
 }
 
 #eSpace {
-  height: 0px;
+  height: 20px;
 }
 
 .pink {

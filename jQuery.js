@@ -16,15 +16,18 @@ $(inputVal).keypress(function(e) {
       
       if($.trim(inputVal.val()) == ''){
         inputVal.attr("placeholder", "NO INPUT");
+        setTimeout(function() {
+          inputVal.attr("placeholder", "");
+        }, 150)
       } else {
         inputVal.attr("placeholder", "");
         
         inputVal.val("");
       
         valuesDiv.prepend(paraVal);
-        //
-        valuesDiv.find("p").first().addClass("absPos").animate({top: "420px", fontSize: "20px"});
-        $("#eSpace").delay(50).animate({height: "20px"}, 150);
+      
+        valuesDiv.find("p").first().addClass("absPos").animate({top: "440px", fontSize: "20px"}, 150);
+        $("#eSpace").animate({height: "20px"}, 150);
         inputVal.prop("disabled", true);
       
         setTimeout(function() {
@@ -58,7 +61,7 @@ clearLast.click(function(){
     valuesDiv.animate({height: '-=20px'}, 200);
     inputVal.focus();
     setTimeout( function() {
-      valuesDiv.find("p").first().remove();
+      valuesDiv.find('p').first().remove();
     }, 210);
   } else {
     valuesDiv.find("p").first().animate({opacity: "0", height: "0px"}, 200);
@@ -66,7 +69,7 @@ clearLast.click(function(){
     $("#eSpace").animate({height: "20px"}, 200);
     inputVal.focus();
     setTimeout( function() {
-      valuesDiv.find("p").first().remove();
+      valuesDiv.find('p').first().remove();
     }, 210);
   }
 });  

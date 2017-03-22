@@ -6,7 +6,7 @@ var valuesDiv = $("#valuesDiv");
 var paraVal;
 
 $( document ).ready(function() {
-     
+  inputVal.attr("placeholder", "type and press return"); 
 });
 
 $(inputVal).keypress(function(e) {
@@ -17,16 +17,20 @@ $(inputVal).keypress(function(e) {
       if($.trim(inputVal.val()) == ''){
         inputVal.attr("placeholder", "NO INPUT");
         setTimeout(function() {
-          inputVal.attr("placeholder", "");
-        }, 150)
-      } else {
-        inputVal.attr("placeholder", "");
+          inputVal.attr("placeholder", "type and press return");
+        }, 600);
         
+      } else {
+          inputVal.attr("placeholder", "");
+        setTimeout(function() {
+          inputVal.attr("placeholder", "type and press return");  
+        }, 200);
+                
         inputVal.val("");
       
         valuesDiv.prepend(paraVal);
       
-        valuesDiv.find("p").first().addClass("absPos").animate({top: "440px", fontSize: "20px"}, 150);
+        valuesDiv.find("p").first().addClass("absPos").animate({top: "434px", fontSize: "20px"}, 150);
         $("#eSpace").animate({height: "20px"}, 150);
         inputVal.prop("disabled", true);
       
@@ -41,14 +45,24 @@ $(inputVal).keypress(function(e) {
 });
   
 clearAll.click(function(){
-  valuesDiv.find("p").animate({opacity: "0"}, 200);
-  setTimeout( function() {
-    $("#eSpace").animate({height: "20px"}, 300);
-    valuesDiv.empty();
-    valuesDiv.animate({height: '0px'}, 300);
-  }, 200);
-  inputVal.focus();
-  inputVal.val("");
+  if (valuesDiv.children().length > 0) {
+    valuesDiv.find("p").animate({opacity: "0"}, 200);
+    inputVal.attr("placeholder", "clearing...");
+    setTimeout( function() {
+      $("#eSpace").animate({height: "20px"}, 300);
+      valuesDiv.empty();
+      valuesDiv.animate({height: '0px'}, 300);
+    }, 200);
+    setTimeout(function() {
+      inputVal.attr("placeholder", "type and press return");
+    }, 500)
+    inputVal.focus();
+    inputVal.val("");
+  } else {
+    inputVal.focus();
+    inputVal.val("");
+  }
+  
 }); 
   
 clearLast.click(function(){
@@ -56,7 +70,7 @@ clearLast.click(function(){
   setTimeout( function() {
     clearLast.prop("disabled", false);
   }, 210)
-  if (valuesDiv.children().length > 1) {
+  if (valuesDiv.children().length > 1) { 
     valuesDiv.find("p").first().animate({opacity: "0", height: "0px"}, 200);
     valuesDiv.animate({height: '-=20px'}, 200);
     inputVal.focus();
@@ -72,4 +86,5 @@ clearLast.click(function(){
       valuesDiv.find('p').first().remove();
     }, 210);
   }
+  
 });  

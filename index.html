@@ -3,8 +3,7 @@
 <head>
   <link rel="stylesheet" type="text/css" href="style.css"/>
   
-  <link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,600,900" rel="stylesheet">
 
   <!--<script src="script.js" defer></script>-->
   <script src="jQuery.js" defer></script>
@@ -14,12 +13,11 @@
 <div id="mainDiv">
   <h1 id="headingOne">DATA HARVEST</h1>
     <div id="mainPic"></div>
-      <input id="clearLast" type="button" value="Clear last" onclick="removeLast()">
-      <input id="clearAll" type="button" value="Clear all" onclick="removeAll()">
+      <button id="clearLast" class="clrBtns">UNDO</button>
+      <button id="clearAll" class="clrBtns">CLEAR</button>
+      <br>
   
-    <p>!Type and press Return!</p>
-  
-    <input id="mainInput" class="text-inputs" type="text" name="numberOne" maxlength="15" autofocus><br>
+      <input id="mainInput" class="text-inputs" type="text" name="numberOne" maxlength="15" placeholder="" autofocus><br>
 
       <hr id="hrLine">
     

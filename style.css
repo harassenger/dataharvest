@@ -7,7 +7,8 @@ body {
 }
 
 h1 {
-  font-family: 'Diplomata SC', cursive;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
   font-size: 50px;
 }
 
@@ -24,21 +25,32 @@ h1 {
 
 #mainInput {
   outline: none;
-  color: #e76736;
+  color: rgba(231, 103, 54, 0);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 0px #000;
   background-color: rgba(0, 0, 0, 0);
 	text-align: center;
 	font-size: 20px;
 	text-transform: uppercase;
-  width: 300px;
+  width: 312px;
   height: 30px;
   font-size: 20px;
 }
 
 #mainInput[type="text"] {
   font-size: 25px;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
   border:none;
   border-bottom: 2px solid black;
+}
+
+#mainInput::placeholder{
+  color: #1b1b1b;
+  opacity: 0.4;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
 }
 
 #mainPic {
@@ -49,7 +61,40 @@ h1 {
   background-size: 800px;
 }
 
-#mainInput {
+.clrBtns {
+  height: 25px;
+  width: 80px;
+  margin-bottom: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0 0 14px 14px;
+  border:none;
+  color: white;
+  font-size: 12px;
+  font-family: 'Raleway', sans-serif;
+  transition: 0.2s all;
+}
+
+.clrBtns:focus {
+  outline: none;
+}
+
+#clearLast {
+  background-color: #d55632;
+  margin-right: 8px;
+}
+
+#clearLast:hover {
+  box-shadow: inset 0 0 0 50px rgba(37, 30, 38, 0.5);
+}
+
+#clearAll {
+  background-color: #251e26;
+  margin-right: 8px;
+}
+
+#clearAll:hover {
+  box-shadow: inset 0 0 0 50px rgba(213, 86, 50, 0.5);
 }
 
 #valuesDiv {
@@ -59,8 +104,7 @@ h1 {
 #valuesDiv > p {
   height: 20px;
   font-size: 25px;
-  font-family: 'Josefin Sans', sans-serif;
-
+  font-family: 'Raleway', sans-serif;
 }
 
 #hrLine {
@@ -74,7 +118,7 @@ h1 {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 380px;
+  top: 364px;
   position: absolute;
   width: 205px;
   height: 25px;
@@ -83,12 +127,4 @@ h1 {
 
 #eSpace {
   height: 20px;
-}
-
-.pink {
-  color: deeppink;
-}
-
-.blue {
-  color: midnightblue;
 }

@@ -21,6 +21,7 @@ h1 {
   transition: 0.5s all;
   border-radius: 10px;
   box-shadow: 0px 0px 200px 50px rgba(255, 255, 255, 0.05);
+  position: relative;
 }
 
 #mainInput {
@@ -37,46 +38,67 @@ h1 {
   font-size: 20px;
 }
 
-#mainInput[type="text"] {
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  border:none;
-  border-bottom: 2px solid black;
-}
-
-#mainInput::placeholder{
-  color: #1b1b1b;
-  opacity: 0.4;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
-}
-
 #mainPic {
   width: 100%;
   height: 220px;
   background-image: url(Images/mainPic.jpg);
   background-position: top;
   background-size: 800px;
+  z-index: 1;
+  transition: 0.2s all;
+}
+
+#infoDiv {
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  z-index: 2;
+  background: -webkit-radial-gradient(rgba(10, 10, 10, 0.4),rgba(10, 10, 10, 0.8));
+  opacity: 0;
+  transition: 0.2s all;
+  cursor: help;
+}
+
+#textBox {
+  margin: auto;
+  margin: 80px auto;
+}
+
+#textBox > p {
+  margin: auto;
+  color: #d1d1d1;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  height: 20px;
+}
+
+h3 {
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif;
 }
 
 .clrBtns {
   height: 25px;
   width: 80px;
   margin-bottom: 5px;
-  background-repeat: no-repeat;
-  background-position: center;
   border-radius: 0 0 14px 14px;
   border:none;
   color: white;
   font-size: 12px;
   font-family: 'Raleway', sans-serif;
   transition: 0.2s all;
+  cursor: pointer;
 }
 
 .clrBtns:focus {
   outline: none;
+  
 }
 
 #clearLast {
@@ -97,14 +119,38 @@ h1 {
   box-shadow: inset 0 0 0 50px rgba(213, 86, 50, 0.5);
 }
 
+#mainInput[type="text"] {
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  border:none;
+  border-bottom: 2px solid black;
+  cursor: default;
+}
+
+#mainInput::placeholder{
+  color: #1b1b1b;
+  opacity: 0.4;
+  font-size: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+}
+
 #valuesDiv {
   height: 0px;
 }
 
 #valuesDiv > p {
   height: 20px;
+  width: 100%;
   font-size: 25px;
   font-family: 'Raleway', sans-serif;
+  transition: 0.2s color;
+  cursor: pointer;
+}
+
+#valuesDiv > p:hover {
+  color: #d55632;
 }
 
 #hrLine {
@@ -118,13 +164,21 @@ h1 {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  top: 364px;
+  top: 344px;
   position: absolute;
-  width: 205px;
+  width: 300px;
   height: 25px;
   font-size: 20px;
 }
 
 #eSpace {
   height: 20px;
+}
+
+.pink {
+  color: deeppink;
+}
+
+.blue {
+  color: deepskyblue;
 }
